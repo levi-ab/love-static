@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +17,12 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
-    h1, h2 {
+
+    h1,
+    h2 {
       font-family: 'Great Vibes', cursive;
     }
+
     section {
       padding: 80px 20px;
       text-align: center;
@@ -36,14 +40,24 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero h1 {
       font-size: 4rem;
       animation: float 3s infinite ease-in-out;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
+
     .scroll-down {
       position: absolute;
       bottom: 20px;
@@ -52,9 +66,17 @@
       font-size: 2rem;
       animation: bounce 2s infinite;
     }
+
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     /* Heart Background Animation */
@@ -67,32 +89,46 @@
       z-index: 0;
       overflow: hidden;
     }
+
     .heart-background span {
       position: absolute;
       color: rgba(255, 255, 255, 0.3);
       font-size: 10rem;
       animation: pulse 4s infinite ease-in-out;
     }
+
     .text-background span {
       position: absolute;
       color: rgba(255, 255, 255, 0.3);
       font-size: 8rem;
       animation: pulse 4s infinite ease-in-out;
     }
+
     @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.5); opacity: 0.6; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+      }
     }
 
     /* Our Story Section */
     .our-story {
       background: rgba(255, 255, 255, 0.1);
     }
+
     .timeline {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
     }
+
     .event {
       width: 100%;
       max-width: 300px;
@@ -100,15 +136,18 @@
       transform: translateY(50px);
       font-family: sans-serif;
     }
+
     .event.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .event img {
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+
     .event p {
       font-size: 1.5rem;
       margin-top: 10px;
@@ -116,13 +155,14 @@
 
     /* Love Letter Section */
     .love-letter {
-  background: rgba(255, 255, 255, 0.1);
-  min-height: 390px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+      background: rgba(255, 255, 255, 0.1);
+      min-height: 390px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
     #typed-text {
       font-size: 2.2rem;
       white-space: pre-wrap;
@@ -135,11 +175,13 @@
     .gallery {
       background: rgba(255, 255, 255, 0.1);
     }
+
     .photo-wall {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
     }
+
     .photo-wall img {
       width: 100%;
       max-width: 300px;
@@ -148,6 +190,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .photo-wall img:hover {
       transform: scale(1.1);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -157,6 +200,7 @@
     .reasons {
       background: rgba(255, 255, 255, 0.1);
     }
+
     .reasons-list {
       display: flex;
       flex-wrap: wrap;
@@ -165,6 +209,7 @@
       z-index: 100;
       color: white;
     }
+
     .reason {
       background: rgba(255, 255, 255, 0.2);
       padding: 20px;
@@ -174,15 +219,18 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transform: translateY(50px);
     }
+
     .reason.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .reason h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
       color: white;
     }
+
     .reason p {
       font-size: 1.2rem;
     }
@@ -191,12 +239,14 @@
     .future-dreams {
       background: rgba(255, 255, 255, 0.1);
     }
+
     .dreams-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
+
     .dream {
       background: rgba(255, 255, 255, 0.2);
       padding: 20px;
@@ -206,14 +256,17 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transform: translateY(50px);
     }
+
     .dream.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .dream h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
     }
+
     .dream p {
       font-size: 1.2rem;
     }
@@ -223,16 +276,19 @@
       padding: 40px 20px;
       background: rgba(255, 255, 255, 0.1);
     }
+
     footer p {
       font-size: 2rem;
       margin-bottom: 20px;
     }
+
     .social-icons a {
       color: white;
       margin: 0 10px;
       font-size: 1.5rem;
       transition: color 0.3s;
     }
+
     .social-icons a:hover {
       color: #ff7eb9;
     }
@@ -242,7 +298,10 @@
       .hero h1 {
         font-size: 3rem;
       }
-      .event, .reason, .dream {
+
+      .event,
+      .reason,
+      .dream {
         width: 100%;
         max-width: 100%;
       }
@@ -250,28 +309,36 @@
 
     /* Custom scrollbar */
     ::-webkit-scrollbar {
-        width: 12px; /* Width of the scrollbar */
+      width: 12px;
+      /* Width of the scrollbar */
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-        border-radius: 10px; /* Rounded corners */
+      background: rgba(255, 255, 255, 0.1);
+      /* Light transparent background */
+      border-radius: 10px;
+      /* Rounded corners */
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #ff6b6b; /* Pink color */
-        border-radius: 10px; /* Rounded corners */
-        border: 3px solid rgba(255, 255, 255, 0.1); /* Add a border */
+      background: #ff6b6b;
+      /* Pink color */
+      border-radius: 10px;
+      /* Rounded corners */
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      /* Add a border */
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: #ff4757; /* Darker pink on hover */
+      background: #ff4757;
+      /* Darker pink on hover */
     }
   </style>
 </head>
+
 <body>
   <!-- Heart Background Animation -->
   <div class="cursor"></div>
@@ -300,43 +367,56 @@
   </section>
   <!-- Our Story Section -->
   <section class="our-story">
-      <div class="heart-background text-background">
-    <span style="top: 10%; left: 10%;">Аня</span>
-    <span style="top: 40%; left: 30%;">❤️</span>
-    <span style="top: 65%; right: 20%;">Бодя</span>
-  </div>
+    <div class="heart-background text-background">
+      <span style="top: 10%; left: 10%;">Аня</span>
+      <span style="top: 40%; left: 30%;">❤️</span>
+      <span style="top: 65%; right: 20%;">Бодя</span>
+    </div>
     <h1 style="font-size: 3rem;">Наші Спільні Моменти</h1>
     <div class="timeline">
       <div class="event">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczN9ocN8lTTxANbKCWhWwcNb46uqM3MMju-_HrFxvhJxLWxmvyhECBgkM9xzKXJUWR8wwAmGtD-unGRNVEBBWpI1NU4ElimgbOCbnUF7gPZYRiMNrWIr=w2400" alt="How We Met">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczN9ocN8lTTxANbKCWhWwcNb46uqM3MMju-_HrFxvhJxLWxmvyhECBgkM9xzKXJUWR8wwAmGtD-unGRNVEBBWpI1NU4ElimgbOCbnUF7gPZYRiMNrWIr=w2400"
+          alt="How We Met">
         <p>Як ми чай пили</p>
       </div>
       <div class="event">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOJWC7bwzbE9PK71srUCfNjalrP1ekJR0Z2E-oE4YV9EC1yYcaaMdYGOwxlHztmxObS4nUm9FKP3q-e-27imQBUjTPDVN4ZjqEe382z3ObHXpMG2-Zb=w2400" alt="First Date">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOJWC7bwzbE9PK71srUCfNjalrP1ekJR0Z2E-oE4YV9EC1yYcaaMdYGOwxlHztmxObS4nUm9FKP3q-e-27imQBUjTPDVN4ZjqEe382z3ObHXpMG2-Zb=w2400"
+          alt="First Date">
         <p>Як в кіно ходили</p>
       </div>
       <div class="event">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczO3WeX6IHG6E5RD-KlSml5kAxonuhMK-nDDP2c_xQmelSfi4bMgE5x_zj4a-vEs88W4UPWqDGGhFjwMSWrJdHqptAzgnuX8Owj7ALbt30G5n6HcD9wn=w2400" alt="Favorite Memory">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczO3WeX6IHG6E5RD-KlSml5kAxonuhMK-nDDP2c_xQmelSfi4bMgE5x_zj4a-vEs88W4UPWqDGGhFjwMSWrJdHqptAzgnuX8Owj7ALbt30G5n6HcD9wn=w2400"
+          alt="Favorite Memory">
         <p>Як на квартирі тусили</p>
       </div>
     </div>
   </section>
 
-  
+
 
   <!-- Gallery Section -->
-  <section class="gallery"><div class="heart-background text-background">
-    <span style="top: 10%; left: 10%;">❤️</span>
-    <span style="top: 40%; left: 30%;">❤️</span>
-    <span style="top: 65%; right: 20%;">❤️</span>
-    <span style="top: 56%; left: 10%;">❤️</span>
-    <span style="top: 25%; right: 40%;">❤️</span>
-  </div>
-    <h2  style="font-size: 3rem;">Наші Спогади</h2>
+  <section class="gallery">
+    <div class="heart-background text-background">
+      <span style="top: 10%; left: 10%;">❤️</span>
+      <span style="top: 40%; left: 30%;">❤️</span>
+      <span style="top: 65%; right: 20%;">❤️</span>
+      <span style="top: 56%; left: 10%;">❤️</span>
+      <span style="top: 25%; right: 40%;">❤️</span>
+    </div>
+    <h2 style="font-size: 3rem;">Наші Спогади</h2>
     <div class="photo-wall">
-      <img style="height: 225px; object-fit: cover;" src="https://lh3.googleusercontent.com/pw/AP1GczMtUEBprN_vooznAqGpnr7L0JQ2VzlAkVEPQ0ZEjXLYeYccebhdcfwSn2ciRuk4nxjAz6a5IKMaqFCxtBrXQFQqr94sd5K6LaOjzsS6gKcwNALYRpvW=w2400" alt="Photo 1">
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczOUbSf7n82HJK1FCWgAjzxmfOPfE8pAsNKSrEvXusRX5QKvk86wMwQds_PS_YpqTcSYbFLLjULL0ugU_EM3sCTCvz7shs3mAePU8xBvhrQZC8wUAYw2=w2400" alt="Photo 2">
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczMHOr-NR0H80VleOVxKwG7MsAyM_rBmvWXuyuc2UyPeSPV5ZF0PrgSmKa5-OekpPGMl_bFT0STLGEPMoqBKoJ_oWRSQZbRxDlO0tghcFpLffMwkr6Wc=w2400" alt="Photo 3">
+      <img style="height: 225px; object-fit: cover;"
+        src="https://lh3.googleusercontent.com/pw/AP1GczMtUEBprN_vooznAqGpnr7L0JQ2VzlAkVEPQ0ZEjXLYeYccebhdcfwSn2ciRuk4nxjAz6a5IKMaqFCxtBrXQFQqr94sd5K6LaOjzsS6gKcwNALYRpvW=w2400"
+        alt="Photo 1">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczOUbSf7n82HJK1FCWgAjzxmfOPfE8pAsNKSrEvXusRX5QKvk86wMwQds_PS_YpqTcSYbFLLjULL0ugU_EM3sCTCvz7shs3mAePU8xBvhrQZC8wUAYw2=w2400"
+        alt="Photo 2">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczMHOr-NR0H80VleOVxKwG7MsAyM_rBmvWXuyuc2UyPeSPV5ZF0PrgSmKa5-OekpPGMl_bFT0STLGEPMoqBKoJ_oWRSQZbRxDlO0tghcFpLffMwkr6Wc=w2400"
+        alt="Photo 3">
     </div>
   </section>
 
@@ -378,10 +458,31 @@
       </div>
     </div>
   </section> -->
+  <section style="background-color: rgba(255, 255, 255, 0.1); height: 100vh;">
+    <div class="heart-background">
+      <span style="top: 0%; left: 5%;">❤️</span>
+      <span style="top: 20%; left: 80%;">❤️</span>
+      <span style="top: 30%; left: 20%;">❤️</span>
+      <span style="top: 70%; left: 60%;">❤️</span>
+      <span style="top: 0%; right: 0%;">❤️</span>
+      <span style="top: 70%; left: 60%;">❤️</span>
+      <span style="top: 80%; left: 10%;">❤️</span>
+      <span style="bottom: 0%; right: 0%;">❤️</span>
+      <span style="bottom: 10%; left: 0%;">❤️</span>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <img
+        src="https://lh3.googleusercontent.com/pw/AP1GczO_VPxiosNZrVrEuj2164YTYa2upq8LTDeJxwRkSRg2byV5sbbdLJ0LT00lxgYySP-LDWNv55bZTFsPQCWYHuWmsC5LOMCSVXU8326vGBxW2fL0KdWA=w2400"
+        style="object-fit: cover; width: 90vw; height: 50vh; max-width: 500px; border-radius: 20px;">
 
+    </div>
+    <div style=" display: flex; justify-content: center; align-items: center;">
+      <p style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Я кохаю тебе, Аня!</p>
+  </section>
+  </div>
   <!-- Footer -->
   <footer>
-    <p style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Я кохаю тебе, Аня!</p>
+
   </footer>
 
   <!-- Scripts -->
@@ -407,28 +508,29 @@
 
     let hasStarted = false; // Ensure it only starts once
 
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("typed-text").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 50);
-  }
-}
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typed-text").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50);
+      }
+    }
 
-const observer = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting && !hasStarted) {
-    hasStarted = true;
-    typeWriter();
-  }
-}, { threshold: 0.5 });
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !hasStarted) {
+        hasStarted = true;
+        typeWriter();
+      }
+    }, { threshold: 0.5 });
 
-observer.observe(document.getElementById("typed-text"));
+    observer.observe(document.getElementById("typed-text"));
 
-document.addEventListener('mousemove', (e) => {
-        const cursor = document.querySelector('.cursor');
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.cursor');
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
     });
   </script>
 </body>
+
 </html>
