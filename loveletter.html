@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>З Днем Закоханих, Анно!</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>❤️</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>❤️</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     /* General Styles */
     body {
@@ -152,6 +154,8 @@
     .event p {
       font-size: 1.5rem;
       margin-top: 10px;
+      font-family: sans-serif;
+      font-weight: bold;
     }
 
     /* Love Letter Section */
@@ -199,37 +203,37 @@
 
     /* New Section: Reasons I Love You */
     .reasons {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 50px 20px;
-}
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px 20px;
+    }
 
-.reasons-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  z-index: 100;
-  color: white;
-}
+    .reasons-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      z-index: 100;
+      color: white;
+    }
 
-.reason {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
+    .reason {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 300px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.reason h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: white;
-}
+    .reason h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: white;
+    }
 
-.reason p {
-  font-size: 1.2rem;
-}
+    .reason p {
+      font-size: 1.2rem;
+    }
 
     /* New Section: Future Dreams */
     .future-dreams {
@@ -311,15 +315,14 @@
 
     /* Track */
     ::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.1);
-      /* Light transparent background */
-      border-radius: 10px;
+      background: #d94e5a;
+
       /* Rounded corners */
     }
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: #ff6b6b;
+      background: #ff8f8f;
       /* Pink color */
       border-radius: 10px;
       /* Rounded corners */
@@ -331,6 +334,51 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #ff4757;
       /* Darker pink on hover */
+    }
+
+    .love-graph-section {
+      text-align: center;
+       background-color: rgba(255, 255, 255, 0.1);
+      /* Semi-transparent white */
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+      /* Above the hearts */
+    }
+
+    canvas {
+      max-width: 100%;
+      max-height: 1000px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 568px) {
+
+      .love-graph-section {
+        padding: 30px 15px;
+        height: 80vh;
+        padding-bottom: 30vh;
+      }
+
+      canvas {
+       width: 100vw; 
+      }
+
+     
+    }
+
+    @media (min-width: 880px) {
+      .love-graph-section {
+        padding: 20px 10px;
+       height: 90vh;
+      padding-bottom: 20vh;
+      }
+
+      canvas {
+       width: 700px; 
+      }
     }
   </style>
 </head>
@@ -416,6 +464,11 @@
     </div>
   </section>
 
+  <section class="love-graph-section">
+    <h1 style="font-size: 3rem;">Моя любов до тебе</h1>
+    <canvas id="loveGraph"></canvas>
+  </section>
+
   <!-- New Section: Reasons I Love You -->
   <section class="reasons">
     <h2 style="font-size: 3rem;">Чому я люблю тебе</h2>
@@ -474,6 +527,9 @@
     </div>
     <div style=" display: flex; justify-content: center; align-items: center;">
       <p style="font-family: 'Great Vibes', cursive; font-size: 3rem;">Я кохаю тебе, Аня!</p>
+      <img style="width: 200px;"
+        src="https://overlooked-web-dev.s3.amazonaws.com/template-images/6cb4fc3e-2073-4561-ac60-465c57c17fe0/image-removebg-preview.png"
+        alt="">
   </section>
   </div>
   <!-- Footer -->
@@ -495,16 +551,16 @@
       },
       opacity: 0,
       y: 50,
-      duration: 3,
-      stagger: 2
+      duration: 2,
+      stagger: 1
     });
-  
+
     // Typewriter Effect for Love Letter
     const text = `Дорога Анно,\n\nТи для мене – цілий світ. З моменту нашої зустрічі моє життя наповнилося радістю, сміхом і любов’ю. Кожна мить із тобою – це справжній скарб, і я не можу дочекатися, щоб створити ще більше прекрасних спогадів разом.\n\nНазавжди твій,\nБогдан`;
     let index = 0;
-  
+
     let hasStarted = false; // Ensure it only starts once
-  
+
     function typeWriter() {
       if (index < text.length) {
         document.getElementById("typed-text").innerHTML += text.charAt(index);
@@ -512,21 +568,140 @@
         setTimeout(typeWriter, 50);
       }
     }
-  
+
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && !hasStarted) {
         hasStarted = true;
         typeWriter();
       }
     }, { threshold: 0.5 });
-  
+
     observer.observe(document.getElementById("typed-text"));
-  
+
     document.addEventListener('mousemove', (e) => {
       const cursor = document.querySelector('.cursor');
       cursor.style.left = `${e.pageX}px`;
       cursor.style.top = `${e.pageY}px`;
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const canvas = document.getElementById("loveGraph");
+    const ctx = canvas.getContext("2d");
+
+    // Initial data for the graph
+    let data = {
+        labels: ["0%"],
+        datasets: [
+            {
+                label: "Моя любов до тебе",
+                data: [0],
+                backgroundColor: "rgba(255, 105, 180, 0.2)", // Pinkish background
+                borderColor: "rgba(255, 105, 180, 1)", // Pinkish border
+                borderWidth: 3,
+                pointBackgroundColor: "rgba(255, 105, 180, 1)", // Pinkish points
+                pointBorderColor: "#fff", // White point borders
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                fill: true,
+            },
+        ],
+    };
+
+    // Chart configuration
+    const config = {
+        type: "line",
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 200,
+                    grid: {
+                        color: "rgba(255, 255, 255, 0.1)", // Light white grid lines
+                    },
+                    ticks: {
+                        color: "white", // White tick labels
+                        font: {
+                            size: 14,
+                            family: "Arial, sans-serif",
+                        },
+                        callback: function (value) {
+                            return value + "%";
+                        },
+                    },
+                },
+                x: {
+                    grid: {
+                        color: "rgba(255, 255, 255, 0.1)", // Light white grid lines
+                    },
+                    ticks: {
+                        color: "white", // White tick labels
+                        font: {
+                            size: 14,
+                            family: "Arial, sans-serif",
+                        },
+                    },
+                },
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: "top",
+                    labels: {
+                        color: "white", // White legend text
+                        font: {
+                            size: 16,
+                            family: "Arial, sans-serif",
+                        },
+                    },
+                },
+                tooltip: {
+                    backgroundColor: "rgba(255, 105, 180, 0.8)", // Pinkish tooltip background
+                    titleColor: "white", // White tooltip title
+                    bodyColor: "white", // White tooltip body text
+                    titleFont: {
+                        size: 16,
+                        family: "Arial, sans-serif",
+                    },
+                    bodyFont: {
+                        size: 14,
+                        family: "Arial, sans-serif",
+                    },
+                },
+            },
+            animation: {
+                duration: 3500, // Animation duration in milliseconds
+                easing: "easeInOutQuart", // Smooth easing function
+            },
+        },
+    };
+
+    // Create the chart
+    const loveChart = new Chart(ctx, config);
+
+    // Function to update the chart when scrolled into view
+    function animateGraph() {
+        const section = document.querySelector(".love-graph-section");
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight - 100) {
+            // Update the chart data
+            loveChart.data.labels = ["0%", "50%", "100%", "150%", "200%"];
+            loveChart.data.datasets[0].data = [0, 50, 100, 150, 200];
+            loveChart.update();
+
+            // Remove the scroll event listener after animation
+            window.removeEventListener("scroll", animateGraph);
+        }
+    }
+
+    // Add scroll event listener
+    window.addEventListener("scroll", animateGraph);
+});
   </script>
 </body>
 
