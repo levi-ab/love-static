@@ -10,7 +10,7 @@
     /* General Styles */
     body {
       margin: 0;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'sans-serif', cursive;
       background: linear-gradient(45deg, #ff7eb9, #ff758c);
       color: white;
       overflow-x: hidden;
@@ -98,6 +98,7 @@
       max-width: 300px;
       margin: 20px 0;
       transform: translateY(50px);
+      font-family: sans-serif;
     }
     .event.visible {
       opacity: 1;
@@ -246,10 +247,34 @@
         max-width: 100%;
       }
     }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #ff6b6b; /* Pink color */
+        border-radius: 10px; /* Rounded corners */
+        border: 3px solid rgba(255, 255, 255, 0.1); /* Add a border */
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ff4757; /* Darker pink on hover */
+    }
   </style>
 </head>
 <body>
   <!-- Heart Background Animation -->
+  <div class="cursor"></div>
   <div class="heart-background">
     <span style="top: 10%; left: 5%;">❤️</span>
     <span style="top: 20%; left: 80%;">❤️</span>
@@ -332,6 +357,7 @@
         <p>Твоя дотепність буває неземною і може розрядити будь-яку ситуацію</p>
       </div>
     </div>
+    <p style="font-family: 'Great Vibes'; font-size: 3rem; margin-top: 100px;">І тисячу інших речей...</p>
   </section>
 
   <!-- New Section: Future Dreams -->
@@ -397,6 +423,12 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 observer.observe(document.getElementById("typed-text"));
+
+document.addEventListener('mousemove', (e) => {
+        const cursor = document.querySelector('.cursor');
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
   </script>
 </body>
 </html>
